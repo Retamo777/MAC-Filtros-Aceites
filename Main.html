@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAC Filtros Y Aceites</title>
+    <link rel="stylesheet" href="style.css"> <!-- Asegúrate de que el nombre del archivo CSS sea correcto -->
+</head>
+<body>
+
+<nav>
+    <ul class="nav-left">
+        <li><a href="Main.html"><img src="pngMAC.png" alt="rueda" class="wheel-img"></a></li>
+    </ul>
+    <ul class="nav-center">
+        <li><a href="#" onclick="mostrarSeccion('inicio')">INICIO</a></li>
+        <li><a href="#" onclick="mostrarSeccion('nosotros')">NOSOTROS</a></li>
+        <li><a href="#" onclick="mostrarSeccion('productos')">PRODUCTOS</a></li>
+    </ul>
+    <ul class="nav-right">
+        <li><label><input type="text" placeholder="Filtros, Aceites..."></label></li>
+        <li><button type="submit">Buscar</button></li>
+    </ul>
+</nav>
+
+<section id="inicio" class="contenido-seccion" style="display: block;">
+
+</section>
+
+<section class="container">
+    <div class="slider-wrapper">
+        <div class="slider">
+            <img id="slide-1" src="imagen1.jpg" alt="imagen1">
+            <img id="slide-2" src="imagen2.jpg" alt="imagen2">
+            <img id="slide-3" src="imagen3.jpg" alt="imagen3">
+        </div>
+        <div class="slider-nav">
+            <a href="#slide-1"></a>
+            <a href="#slide-2"></a>
+            <a href="#slide-3"></a>
+        </div>
+    </div>
+</section>
+
+<section class="map">
+    <div><p>Encuéntranos</p></div>
+    <div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1285.8898540469745!2d-72.48910766910896!3d7.898162066718586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6645102f9b7269%3A0xab4b03ed6c85830e!2sUniversidad%20Francisco%20de%20Paula%20Santander!5e0!3m2!1ses!2sco!4v1730910595091!5m2!1ses!2sco" width="900" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</section>
+
+
+<section id="nosotros" class="contenido-seccion" style="display: none;">
+    <h1>¿QUIÉNES SOMOS?</h1>
+    <p class="subtitulo-nosotros">FILTROS Y ACEITES MAC, ubicado en la ciudad de Cúcuta, nació en el año 2024, fruto de la dedicación de nuestro personal experimentado. Somos una empresa comprometida en ofrecer productos de mantenimiento automotriz de alto rendimiento, que cuidarán y prolongarán la vida de sus vehículos</p>
+    <div class="mision-vision-container">
+        <div class="mision">
+            <h1>MISIÓN</h1>
+            <p>FILTROS Y ACEITES MAC es una organización dedicada a la comercialización de productos consumibles del sector automotriz, con énfasis en vehículos medianos. Estos productos son reconocidos a nivel internacional y son certificados según normas ASTM, Sura e ISO. La empresa está respaldada por un personal humano competente y entregado a representar nuestra honestidad, responsabilidad y compromiso, en adición a esto contamos con una completa red de distribución y servicios para proveer soluciones eficientemente en toda el área metropolitana de Cúcuta.</p>
+        </div>
+        <div class="vision">
+            <h1>VISIÓN</h1>
+            <p>FILTROS Y ACEITES MAC se visualiza en el 2030 como una empresa destacada en el sector automotriz a nivel nacional. Sus soluciones serán reconocidas por los clientes como un símbolo de calidad y rendimiento, y su enfoque estará dirigido a satisfacer sus necesidades sin perder de vista el impacto medioambiental, al incentivar el uso adecuado de sus productos con campañas de concientización y reciclaje.</p>
+        </div>
+    </div>
+    <h1>EQUIPO</h1>
+    <div class="equipo-container">
+        <img src="Copia de PORTAFOLIO MAC.png" alt="José Colmenares">
+        <div class="equipo-info">
+            <h2>JOSÉ COLMENARES</h2>
+            <h3>Gerente</h3>
+            <p>Contador Público graduado de la UFPS con experiencia en la adquisición de productos de grandes compañías, estableciendo acuerdos comerciales y negociando con otras ciudades para asegurar un suministro constante y competitivo.</p>
+        </div>
+    </div>
+    <div class="equipo-container">
+        <img src="Copia de PORTAFOLIO MAC (1).png" alt="Carlos Peñaranda">
+        <div class="equipo-info">
+            <h2>CARLOS PEÑARANDA</h2>
+            <h3>Distribuidor y Vendedor</h3>
+            <p>Cuenta con 22 años de experiencia como asesor comercial en la empresa en ProCar Inversiones en su en Cúcuta . Se encarga de la distribución de productos y la gestión de ventas directas a clientes, asegurando la correcta finalización de todas las transacciones.</p>
+        </div>
+    </div>
+    <div class="equipo-container">
+        <img src="Copia de PORTAFOLIO MAC (2).png" alt="Ciro Colmenares">
+        <div class="equipo-info">
+            <h2>CIRO COLMENARES</h2>
+            <h3>Gestor de Facturación</h3>
+            <p>Abogado graduado de la UFPS con experiencia como gestor de facturación en la empresa. Se encarga de asegurar la precisión de las transacciones y de empacar los productos, garantizando que estén organizados y protegidos para su entrega en óptimas condiciones.</p>
+        </div>
+    </div>
+</section>
+
+<section id="productos" class="contenido-seccion" style="display: none;">
+    <h1>Productos</h1>
+    <form class="product-form">
+        <div class="search">
+            <input type="text" name="" id="item-searched" placeholder="Buscar..." onkeyup="search()">
+        </div>
+
+        <div class="filters">
+            <button id="todo">Todo</button>
+            <button id="filtros">Filtros</button>
+            <button id="aceites">Aceites</button>
+            <button id="refrigerantes">Refrigerantes</button>
+            <button id="grasas">Grasas</button>
+        </div>
+    </form>
+
+    <div class="product-list" id="product-list">
+
+        <div class="product">
+            <div class="img-container">
+                <img src="productos/filtrosAceite/filtroAceiteA111.jpg">
+            </div>
+            <div class="p-details">
+                <h2>Filtro de Aceite</h2>
+                <h3>A111</h3>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="img-container">
+                <img src="productos/filtrosAire/filtroAireAP0978.jpg">
+            </div>
+            <div class="p-details">
+                <h2>Filtro de Aire</h2>
+                <h3>AP0978</h3>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="img-container">
+                <img src="productos/filtrosCombustible/filtroCombustibleA941SP.jpg">
+            </div>
+            <div class="p-details">
+                <h2>Filtro de Combustible</h2>
+                <h3>A941SP</h3>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="img-container">
+                <img src="productos/filtrosAceite/filtroAceiteA111.jpg">
+            </div>
+            <div class="p-details">
+                <h2>Filtro de Aceite</h2>
+                <h3>A111</h3>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="img-container">
+                <img src="productos/filtrosAire/filtroAireAP0978.jpg">
+            </div>
+            <div class="p-details">
+                <h2>Filtro de Aire</h2>
+                <h3>AP0978</h3>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="img-container">
+                <img src="productos/filtrosCombustible/filtroCombustibleA941SP.jpg">
+            </div>
+            <div class="p-details">
+                <h2>Filtro de Combustible</h2>
+                <h3>A941SP</h3>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="img-container">
+                <img src="productos/filtrosAceite/filtroAceiteA111.jpg">
+            </div>
+            <div class="p-details">
+                <h2>Filtro de Aceite</h2>
+                <h3>A111</h3>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="img-container">
+                <img src="productos/filtrosAire/filtroAireAP0978.jpg">
+            </div>
+            <div class="p-details">
+                <h2>Filtro de Aire</h2>
+                <h3>AP0978</h3>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="img-container">
+                <img src="productos/filtrosCombustible/filtroCombustibleA941SP.jpg">
+            </div>
+            <div class="p-details">
+                <h2>Filtro de Combustible</h2>
+                <h3>A941SP</h3>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="img-container">
+                <img src="productos/filtrosAceite/filtroAceiteA111.jpg">
+            </div>
+            <div class="p-details">
+                <h2>Filtro de Aceite</h2>
+                <h3>A111</h3>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="img-container">
+                <img src="productos/filtrosAire/filtroAireAP0978.jpg">
+            </div>
+            <div class="p-details">
+                <h2>Filtro de Aire</h2>
+                <h3>AP0978</h3>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="img-container">
+                <img src="productos/filtrosCombustible/filtroCombustibleA941SP.jpg">
+            </div>
+            <div class="p-details">
+                <h2>Filtro de Combustible</h2>
+                <h3>A941SP</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<a href="https://wa.me/3204177123" class="whatsapp-button" target="_blank">
+    <img src="pngWhatsapp.png" alt="WhatsApp">
+</a>
+
+
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section contact">
+            <h3>Información de Contacto</h3>
+            <p><i class="fas fa-map-marker-alt"></i>Mz 2 Lote 2 segunda etapa, urb Panamericana, Cúcuta, Norte de Santander, Colombia</p>
+            <p><i class="fas fa-phone"></i>+57 300 2917564</p>
+            <p><i class="fas fa-envelope"></i>filtrosyaceitesmac@gmail.com</p>
+        </div>
+        <div class="footer-section socialNetworks">
+            <h3>Redes Sociales</h3>
+            <div class="button-text-container">
+                <a href="https://www.facebook.com/people/Filtros-y-aceite-MAC/61561138335849/?mibextid=ZbWKwL" class="image-button">
+                    <img src="pngFacebook.png" alt="Logo Facebook">
+                </a>
+                <p class="button-text">Filtros y aceite MAC</p>
+            </div>
+            <div class="button-text-container">
+                <a href="https://www.instagram.com/filtrosyaceitesmac/" class="image-button">
+                    <img src="pngInstagram.png" alt="Logo Instagram">
+                </a>
+                <p class="button-text">filtrosyaceitesmac</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2024 MAC Filtros y Aceites. Todos los derechos reservados.
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

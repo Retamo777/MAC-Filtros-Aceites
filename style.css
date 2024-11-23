@@ -11,6 +11,10 @@ nav {
     padding: 0;
     margin: 0;
     justify-content: center; /* Centra los elementos dentro del contenedor nav */
+    border-bottom-color: #0C0C0C;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+
 }
 
 nav ul {
@@ -98,33 +102,52 @@ nav .nav-right button:hover {
 }
 
 
-.container{
+.container {
     padding: 2rem;
 }
 
-.slider-wrapper{
+.slider-wrapper {
     position: relative;
     max-width: 60rem;
     margin: 0 auto;
 }
 
-.slider{
+.slider {
     display: flex;
     aspect-ratio: 16/9;
-    overflow-x: auto;
+    overflow-x: hidden;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     box-shadow: 0 1.5rem 3rem -0.75rem hsl(0, 0%, 0%, 0.25);
     border-radius: 1rem;
 }
 
-.slider img{
-    flex: 1 0 100%;
+.slide {
+    display: flex;
+    flex: 0 0 100%;
     scroll-snap-align: start;
-    object-fit: cover;
+    align-items: center;
 }
 
-.slider-nav{
+.slide img {
+    flex: 0 0 50%;
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 1rem 0 0 1rem;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsl(0, 0%, 0%, 0.15);
+}
+
+.slide-text {
+    flex: 1;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0 1rem 1rem 0;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsl(0, 0%, 0%, 0.15);
+}
+
+.slider-nav {
     display: flex;
     column-gap: 1rem;
     position: absolute;
@@ -134,7 +157,7 @@ nav .nav-right button:hover {
     z-index: 1;
 }
 
-.slider-nav a{
+.slider-nav a {
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 50%;
@@ -143,8 +166,81 @@ nav .nav-right button:hover {
     transition: opacity ease 0.25s;
 }
 
-.slider-nav a:hover{
+.slider-nav a:hover {
     opacity: 1;
+}
+
+.productos-mas-vendidos {
+    margin: 50px auto;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.productos-mas-vendidos .header-vendidos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.productos-mas-vendidos .header-vendidos h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.productos-mas-vendidos .header-vendidos button {
+    background-color: #1C70B8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.productos-mas-vendidos .grid-vendidos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.productos-mas-vendidos .card-product {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.productos-mas-vendidos .card-product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.productos-mas-vendidos .card-product img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.productos-mas-vendidos .card-product p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.productos-mas-vendidos .card-product .categoria {
+    font-size: 14px;
+    color: #666;
+}
+
+.productos-mas-vendidos .card-product .precio {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1C70B8;
 }
 
 .map {
@@ -155,7 +251,7 @@ nav .nav-right button:hover {
     text-align: center;
 
     background-color: #1C70B8;
-    <!-- #1C70B8 -->
+    /* #1C70B8 */
 
     color: white;
     padding: 10px 10px;
@@ -165,7 +261,7 @@ nav .nav-right button:hover {
     font-size: 40px;
 }
 
-.whatsapp-button {
+.whatsapp-button-esquina {
     position: fixed; /* Fija el botón en la pantalla */
     bottom: 20px; /* Distancia desde la parte inferior */
     right: 20px; /* Distancia desde la parte derecha */
@@ -181,11 +277,11 @@ nav .nav-right button:hover {
     transition: transform 0.3s; /* Animación para el botón */
 }
 
-.whatsapp-button:hover {
+.whatsapp-button-esquina:hover {
     transform: scale(1.1); /* Agranda el botón al pasar el cursor */
 }
 
-.whatsapp-button img {
+.whatsapp-button-esquina img {
     width: 60%; /* Ajusta el tamaño del logo */
     height: 60%; /* Ajusta el tamaño del logo */
 }
@@ -205,7 +301,7 @@ body {
     justify-content: space-around;
     align-items: flex-start;
     flex-wrap: wrap;
-    padding: 10px 20px; /* Reducido */
+    padding: 10px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -219,8 +315,13 @@ body {
     border-right: 2px solid white;
 }
 
+.footer-section.navigation {
+    border-left: 2px solid white; /* Agregado el borde en la navegación */
+    padding-right: 20px; /* Opcional, para agregar un poco de espacio del borde */
+}
+
 .footer-section p {
-    margin: 5px 0; /* Reducido */
+    margin: 5px 0;
     color: white;
     text-decoration: none;
     text-align: left;
@@ -234,14 +335,38 @@ body {
     text-decoration: none;
     font-weight: bold;
     font-family: "Arial", sans-serif;
-    font-size: 20px; /* Reducido */
+    font-size: 20px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: "Arial", sans-serif;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    background-color: #333;
 }
 
 .footer-bottom {
     background-color: #0C0C0C;
     color: white;
     padding: 10px 0;
-    margin-top: 10px; /* Reducido */
+    margin-top: 10px;
 }
 
 .button-text-container {
@@ -260,10 +385,30 @@ body {
     color: #333;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
 
-.contenido-seccion{
-    display: block;
-    text-align: center;
+    .footer-section {
+        margin-bottom: 20px;
+        flex: none;
+    }
+
+    .footer-section.contact {
+        border-right: none;
+    }
+
+    .footer-section.navigation ul li a {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    .footer-bottom {
+        padding: 15px 0;
+    }
 }
 
 
@@ -271,8 +416,13 @@ body {
 
 
 
-/* Estilos para la sección 'Nosotros' */
+
 #nosotros {
+    display: flex;
+    flex-direction: column; /* Apila los elementos en columna por defecto */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    min-height: 100vh; /* Ocupa toda la altura del viewport */
     padding: 2rem;
     background-color: #f5f5f5;
     color: #333;
@@ -281,6 +431,7 @@ body {
     margin: 0 auto;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño */
 }
 
 #nosotros h1 {
@@ -292,16 +443,18 @@ body {
 
 .subtitulo-nosotros {
     text-align: center;
-    font-size: 1.2rem; /* Opcional, para ajustar el tamaño del texto */
+    font-size: 1.2rem;
     margin: 1rem 0;
-    color: #333; /* Opcional, para ajustar el color */
+    color: #333;
 }
 
 .mision-vision-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row; /* Los elementos estarán en fila por defecto */
+    justify-content: space-between; /* Espacio entre Misión y Visión */
     gap: 1rem;
     margin-top: 1.5rem;
+    width: 100%; /* Asegura que ocupe todo el espacio disponible */
 }
 
 .mision, .vision {
@@ -309,11 +462,27 @@ body {
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    width: 48%;
+    width: 48%; /* Ocupa el 48% del ancho disponible */
     font-size: 1.2rem;
     margin: 1rem 0;
     color: #333;
     text-align: center;
+}
+
+.portafolio {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 1rem;
+    align-items: center;
+    text-align: center;
+    margin-left: auto; /* Centra el portafolio horizontalmente */
+    margin-right: auto; /* Centra el portafolio horizontalmente */
 }
 
 .mision h1, .vision h1 {
@@ -331,6 +500,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     gap: 1rem;
+    flex-wrap: wrap; /* Hace que los elementos se acomoden en pantallas pequeñas */
 }
 
 .equipo-container img {
@@ -363,6 +533,71 @@ body {
     text-align: justify;
 }
 
+@media (max-width: 768px) {
+    .mision, .vision {
+        width: 100%; /* Los elementos mision y vision ocuparán todo el ancho */
+        margin-bottom: 1rem; /* Agrega espacio entre ellos */
+    }
+
+    .equipo-container {
+        flex-direction: column; /* Cambia la disposición a columna para pantallas pequeñas */
+        align-items: center;
+    }
+
+    .portafolio {
+        width: 90%; /* Aumenta el ancho del portafolio en pantallas pequeñas */
+    }
+
+    #nosotros h1 {
+        font-size: 1.8rem; /* Ajusta el tamaño de los títulos */
+    }
+
+    .subtitulo-nosotros {
+        font-size: 1.1rem;
+    }
+
+    .equipo-info h2 {
+        font-size: 1.4rem;
+    }
+
+    .equipo-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .equipo-info p {
+        font-size: 1rem; /* Reduce el tamaño de los párrafos en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    #nosotros h1 {
+        font-size: 1.6rem; /* Reduce el tamaño del título para pantallas muy pequeñas */
+    }
+
+    .subtitulo-nosotros {
+        font-size: 1rem;
+    }
+
+    .portafolio {
+        width: 95%;
+    }
+
+    .mision, .vision {
+        font-size: 1rem; /* Ajusta el tamaño de la fuente de mision y vision */
+    }
+
+    .equipo-info h2 {
+        font-size: 1.2rem;
+    }
+
+    .equipo-info h3 {
+        font-size: 1rem;
+    }
+
+    .equipo-info p {
+        font-size: 0.9rem;
+    }
+}
 
 
 
@@ -370,6 +605,21 @@ body {
 
 
 
+
+
+/* styles.css */
+
+#filter-message {
+    display: none; /* Se oculta por defecto */
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 18px; /* Tamaño de texto mayor */
+    color: black; /* Color negro */
+    font-weight: bold; /* Texto en negrita */
+    background-color: #f0f0f0; /* Fondo ligeramente gris */
+    border: 1px solid #ccc; /* Borde ligero */
+    border-radius: 5px; /* Bordes redondeados */
+}
 
 .products-container{
     width: 80%;
@@ -425,7 +675,7 @@ body {
     color: #aaa; /* Color del texto del marcador de posición */
 }
 
-.product-form button{
+.filters button{
     background-color: #1C70B8; /* Color de fondo */
     color: white; /* Color del texto */
     border: none; /* Sin borde */
@@ -437,18 +687,26 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra del botón */
     transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
 }
-.product-form button:hover{
+.filters button:hover{
     background-color: #165a8e; /* Color de fondo al pasar el ratón */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Sombra al pasar el ratón */
 }
 
-.product-form button:active {
+.filters button:active {
     background-color: #144d76; /* Color de fondo al hacer clic */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra al hacer clic */
     transform: translateY(2px); /* Movimiento hacia abajo al hacer clic */
 }
 
-.product{
+
+/* Botón activo */
+.active-filter {
+    background-color: #660000; /* Azul oscuro */
+    color: white; /* Texto en blanco */
+}
+
+
+.product {
     flex: 1 1 calc(25% - 20px); /* 4 productos por fila */
     box-sizing: border-box;
     border: 1px solid black;
@@ -457,8 +715,220 @@ body {
     margin: 10px;
     text-align: center;
     background-color: #f9f9f9;
+    max-width: 300px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
+
+.product:hover {
+    transform: scale(1.05);
+    background-color: #f0f0f0;
+}
+
+.product-details {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.product-details.active {
+    display: block;
+}
+
+.details-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.product-description {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.product-img {
+    flex: 1;
+    min-width: 200px;
+}
+
+.buy-btn {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buy-btn:hover {
+    background-color: #333;
+}
+
+.buy-icon {
+    width: 20px; /* Ajusta el tamaño de la imagen */
+    height: 20px;
+    max-width: 100%; /* Asegura que la imagen no se desborde */
+    max-height: 100%; /* Asegura que la imagen no se desborde */
+    object-fit: contain; /* Mantiene las proporciones originales de la imagen */
+    margin-right: 10px;
+}
+
+
+.contact-btn {
+    margin-top: 20px;
+}
+
+.whatsapp-btn {
+    background-color: #25D366;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none; /* Elimina el subrayado */
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+}
+
+.whatsapp-icon {
+    width: 20px; /* Ajusta el tamaño de la imagen */
+    height: 20px;
+    max-width: 100%; /* Asegura que la imagen no se desborde */
+    max-height: 100%; /* Asegura que la imagen no se desborde */
+    object-fit: contain; /* Mantiene las proporciones originales de la imagen */
+    margin-right: 10px;
+}
+
+
+.product-main-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ajusta la imagen para cubrir completamente el contenedor */
+    border-radius: 8px;
+}
+
+.product-info {
+    flex: 2;
+    min-width: 300px;
+}
+
+.product-info h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.product-info p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.product-attributes {
+    margin-top: 20px;
+}
+
+.product-attributes-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.buy-btn {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.buy-btn:hover {
+    background-color: #333;
+}
+
+.contact-btn {
+    margin-top: 20px;
+}
+
+.pdf-btn {
+    background-color: #ec1616;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none; /* Elimina el subrayado */
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+}
+
+.whatsapp-icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
 
 .product-list{
     display: flex;
@@ -467,7 +937,7 @@ body {
     padding: 5px 15px;
 }
 
-.product .img-container {
+.img-container {
     position: relative;
     width: 100%;
     padding-top: 100%; /* Hace que el contenedor tenga una altura igual a su anchura */
